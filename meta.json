@@ -1,0 +1,11 @@
+{
+ "v": 1,
+ "app": "LiBird Words",
+ "kdf": "PBKDF2-SHA256",
+ "salt": "UMmVKqCRFwRUmECSehDOgg==",
+ "iter": 600000,
+ "check": {
+  "iv": "2J/38weAlIqdAPXY",
+  "ct": "KL9p8xEVsDk83N0SWy9/papUrZO9G0k1AC5tkA=="
+ }
+}

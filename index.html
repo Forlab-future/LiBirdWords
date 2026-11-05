@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2348C9">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="LiBird Words">
+<title>LiBird Words</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="top">
+  <button type="button" class="brand" data-act="home">LiBird <b>Words</b></button>
+  <div class="top-right">
+    <button type="button" id="sync-dot" class="dot off" data-act="sync-info" title="동기화 상태"><span></span><em id="sync-label">로컬</em></button>
+    <button type="button" class="icon" data-act="settings" aria-label="설정">⚙</button>
+  </div>
+</header>
+<main id="view"></main>
+<div id="modal" class="hidden" role="dialog" aria-modal="true"><div class="sheet" id="modal-body"></div></div>
+<div id="toast" class="hidden"></div>
+
+<script src="data/kana.js"></script>
+<script src="data/ja.js"></script>
+<script src="data/en.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

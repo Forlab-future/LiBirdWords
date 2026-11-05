@@ -3,30 +3,49 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#2348C9">
+<meta name="theme-color" content="#eb6834">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="LiBird Words">
+<meta name="description" content="일본어·영어 단어 학습 — 간격 반복, 게임, 읽기, AI 튜터">
 <title>LiBird Words</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="lang-ja">
 <header id="top">
-  <button type="button" class="brand" data-act="home">LiBird <b>Words</b></button>
+  <button type="button" class="brand" data-act="home" aria-label="홈"><span class="mark"><span>あ</span>A</span><span class="brand-tx">LiBird <b>Words</b></span></button>
+  <div class="seg lang-seg" id="lang-seg" role="tablist" aria-label="언어">
+    <button type="button" data-act="lang" data-lang="ja"><span class="jp">あ</span> 일본어</button>
+    <button type="button" data-act="lang" data-lang="en"><span>Aa</span> 영어</button>
+  </div>
   <div class="top-right">
-    <button type="button" id="sync-dot" class="dot off" data-act="sync-info" title="동기화 상태"><span></span><em id="sync-label">로컬</em></button>
-    <button type="button" class="icon" data-act="settings" aria-label="설정">⚙</button>
+    <button type="button" class="icon-btn ai-btn" data-act="chat" aria-label="AI에게 묻기" title="AI에게 묻기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></button>
+    <button type="button" class="icon-btn" data-act="settings" aria-label="설정" title="설정"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg><i id="sync-dot" class="sdot"></i></button>
   </div>
 </header>
 <main id="view"></main>
+<nav id="tabs" aria-label="메뉴"><div class="inner"></div></nav>
 <div id="modal" class="hidden" role="dialog" aria-modal="true"><div class="sheet" id="modal-body"></div></div>
-<div id="toast" class="hidden"></div>
+<div id="toast" class="hidden" role="status"></div>
+<div id="tip" class="hidden"></div>
 
 <script src="data/kana.js"></script>
 <script src="data/ja.js"></script>
+<script src="data/ja_more.js"></script>
 <script src="data/en.js"></script>
-<script src="app.js"></script>
+<script src="data/en_more.js"></script>
+<script src="js/core.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/study.js"></script>
+<script src="js/views.js"></script>
+<script src="js/more.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,5 @@
+# 비밀 정보 (GitHub 토큰 등) — 절대 올리지 않음
+secrets/
+*.token.txt
+# 로컬 개발 설정
+.claude/
